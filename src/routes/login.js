@@ -1,7 +1,6 @@
 const express = require("express");
 const rotas = express.Router();
 
-// Importe o objeto de usuários com as credenciais corretas
 const usuariosAutenticados = require("../models/users");
 
 rotas.post("/login", (req, res) => {
