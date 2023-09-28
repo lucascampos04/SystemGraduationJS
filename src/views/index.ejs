@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA EJS</title>
+</head>
+<body>
+<!-- views/index.ejs -->
+<form action="/login" method="post">
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" name="username" placeholder="usuário">
+    <br>
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" placeholder="senha">
+    <br>
+    <input type="submit" value="Entrar">
+    <p class="error_login"><%= error_login %></p>
+</form>
+
+</body>
+</html>
