@@ -1,4 +1,5 @@
 const express = require("express");
+const rotaHome = require("./home")
 const rotas = express.Router();
 
 const usuariosAutenticados = require("../models/users");
@@ -10,7 +11,8 @@ rotas.post("/login", (req, res) => {
   console.log("senha:", senha);
 
   if (username === usuariosAutenticados.username && senha === usuariosAutenticados.senha) {
-    res.json(usuariosAutenticados);
+    // res.json(usuariosAutenticados);
+    res.redirect("/")
   } else {
     console.log("Autenticação falhou");
     res.status(401).json({ error_login: "Credenciais inválidas" });
