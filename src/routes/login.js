@@ -21,7 +21,7 @@ rotas.post("/login", (req, res) => {
 rotas.get("/login", (req, res) => {
     const error_login = ""
 
-    res.render("index", {error_login});
+    res.render("login", {error_login});
 });
 
 module.exports = rotas;
