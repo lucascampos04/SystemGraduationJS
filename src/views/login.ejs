@@ -30,6 +30,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-left: 10%;
         }
 
         label {
@@ -79,8 +80,9 @@
         <input type="password" id="senha" name="senha" placeholder="senha">
         <br>
         <input type="submit" value="Entrar">
-        <p class="error_login"><%= error_login %></p>
     </form>
+
+    <%- include("./partials/error_login") %>
 
 
 

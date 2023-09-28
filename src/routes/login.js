@@ -23,15 +23,15 @@ rotas.post("/login", (req, res) => {
     } else if (results.length > 0) {
       const { matricula, usuario } = results[0];
       console.log(`Login bem-sucedido. Usuário: ${usuario} (Matrícula: ${matricula})`);
-      conn.end(); 
       res.redirect("/");
     } else {
       
       console.log("Autenticação falhou");
-      conn.end(); 
+     
       const error_login = "Credenciais inválidas";
       res.render("login", { error_login });
     }
+  conn.end(); 
   });
 });
 
