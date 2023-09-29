@@ -59,7 +59,19 @@
         <a href="" class="align-right">Adiar Formatura</a>
         <a href="" class="align-right">Eventos disponiveis</a>
         <a href="" class="align-right">Sobre nós</a>
-        <button class="align-right btn btn-success">LOGIN</button>
+        <button class="align-right btn btn-success" id="btn_login">LOGIN</button>
         <button class="align-right btn btn-dark" id="btn_create">CRIAR CONTA</button>
     </nav>
+    <script>
+        const btnLogin = document.getElementById("btn_login")
+        const btnCreate = document.getElementById("btn_create")
+
+        btnCreate.addEventListener('click', () => {
+            window.location.href = "/criar-conta"
+        })
+
+        btnLogin.addEventListener('click', () => {
+            window.location.href = "/login"
+        })
+    </script>
 </html>

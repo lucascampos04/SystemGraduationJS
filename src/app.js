@@ -1,10 +1,11 @@
 const express = require("express");
 const routerLogin = require("./routes/login")
 const routerHome = require("./routes/home")
+const routerCreateAccount = require("./routes/createAccount")
 const app = express();
 const bodyParser = require("body-parser")
 
-const router = [routerHome, routerLogin]
+const router = [routerHome, routerLogin, routerCreateAccount]
 
 app.set('view engine', 'ejs')
 app.set('views', './views')

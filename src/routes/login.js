@@ -10,28 +10,21 @@ rotas.use(bodyParser.urlencoded({extended:true}))
 rotas.post("/login", (req, res) => {
   const { username, senha } = req.body;
 
-  console.log("username:", username);
-  console.log("senha:", senha);
-
   const query = 'SELECT matricula, usuario FROM logsfuncionarios WHERE usuario = ? AND senha = ?';
   conn.query(query, [username, senha], (error, results) => {
     if (error) {
       console.error('Erro ao executar a consulta:', error);
-      conn.end(); 
       const error_login = "Erro ao verificar o login.";
       res.render("login", { error_login });
     } else if (results.length > 0) {
       const { matricula, usuario } = results[0];
       console.log(`Login bem-sucedido. Usuário: ${usuario} (Matrícula: ${matricula})`);
-      res.redirect("/");
+      res.redirect("/principal");
     } else {
-      
       console.log("Autenticação falhou");
-     
       const error_login = "Credenciais inválidas";
       res.render("login", { error_login });
-    }
-  conn.end(); 
+    } 
   });
 });
 
